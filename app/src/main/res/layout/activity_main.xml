@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D1A"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- App Icon / Emoji Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✨"
+            android:textSize="64sp"
+            android:layout_marginTop="32dp" />
+
+        <!-- App Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Social Sparks"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="#A78BFA"
+            android:layout_marginTop="8dp" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stay connected, one spark at a time"
+            android:textSize="14sp"
+            android:textColor="#6B7280"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="40dp" />
+
+        <!-- Card Container -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="8dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="#1A1A2E"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <!-- Input Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What time of day is it?"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#E2E8F0"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Hint Text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Try: Morning, Mid-morning, Afternoon, Afternoon Snack Time, Dinner, Night"
+                    android:textSize="12sp"
+                    android:textColor="#6B7280"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Text Input -->
+                <EditText
+                    android:id="@+id/etTimeOfDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="e.g. Morning"
+                    android:textColor="#E2E8F0"
+                    android:textColorHint="#4B5563"
+                    android:background="@drawable/input_background"
+                    android:padding="14dp"
+                    android:textSize="16sp"
+                    android:inputType="textCapSentences"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Get Spark Button -->
+                <Button
+                    android:id="@+id/btnGetSpark"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="✨ Get My Spark!"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_gradient"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Reset Button -->
+                <Button
+                    android:id="@+id/btnReset"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="Reset"
+                    android:textSize="14sp"
+                    android:background="@drawable/button_outline"
+                    android:textColor="#A78BFA" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Result Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:elevation="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="#1A1A2E"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Spark 🔥"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#A78BFA"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tvSuggestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#E2E8F0"
+                    android:lineSpacingExtra="4dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Error Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:elevation="8dp"
+            android:visibility="gone"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="#2D1B1B"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Oops! 🤔"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#F87171"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/tvError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textColor="#FCA5A5"
+                    android:lineSpacingExtra="4dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Made with 💜 for Cora"
+            android:textSize="12sp"
+            android:textColor="#374151"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+</ScrollView>
